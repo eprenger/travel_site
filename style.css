@@ -25,6 +25,8 @@ body {
   width: 80%;
   margin: auto;
   padding: 2rem 0rem;
+  z-index: 2;
+  position: relative;
 }
 
 .line1,
@@ -172,7 +174,7 @@ body {
 }
 
 .cursor.explore-active {
-  background: white;
+  /* background: white; */
   transform: scale(3);
 }
 
@@ -212,4 +214,8 @@ body {
 .nav-active {
   background: rgb(86, 124, 228);
   transform: scale(3);
+}
+
+body.hide {
+  overflow: hidden;
 }
