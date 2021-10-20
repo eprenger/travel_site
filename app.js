@@ -108,6 +108,53 @@ function navToggle(e) {
 }
 
 //Barba page transitions
+// barba.init({
+//   views: [
+//     {
+//       namespace: "home",
+//       beforeEnter() {
+//         animateSlides();
+//       },
+//       beforeLeave() {
+//         slideScene.destroy();
+//         pageScene.destroy();
+//         controller.destroy();
+//       },
+//     },
+//     {
+//       namespace: "fashion",
+//     },
+//   ],
+//   transtions: [
+//     {
+//       leave({ current, next }) {
+//         let done = this.async();
+//         //animation to fade
+//         const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+//         tl.fromTo(
+//           current.container,
+//           1,
+//           { opacity: 1 },
+//           { opacity: 0, onComplete: done }
+//         );
+//       },
+//       enter({ current, next }) {
+//         let done = this.async();
+//         //scroll to top
+//         window.scrollTo(0, 0);
+//         //animation
+//         const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
+//         tl.fromTo(
+//           next.container,
+//           1,
+//           { opacity: 0 },
+//           { opacity: 1, onComplete: done }
+//         );
+//       },
+//     },
+//   ],
+// });
+
 barba.init({
   views: [
     {
@@ -115,21 +162,24 @@ barba.init({
       beforeEnter() {
         animateSlides();
       },
+    },
+
+    {
       beforeLeave() {
         slideScene.destroy();
         pageScene.destroy();
-        controller.destroy();
+        controller.destory();
       },
     },
     {
       namespace: "fashion",
     },
   ],
-  transtions: [
+  transitions: [
     {
       leave({ current, next }) {
         let done = this.async();
-        //animation to fade
+        //An Animation
         const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
         tl.fromTo(
           current.container,
@@ -142,10 +192,10 @@ barba.init({
         let done = this.async();
         //scroll to top
         window.scrollTo(0, 0);
-        //animation
+        //An Animation
         const tl = gsap.timeline({ defaults: { ease: "power2.inOut" } });
         tl.fromTo(
-          next.container,
+          current.container,
           1,
           { opacity: 0 },
           { opacity: 1, onComplete: done }
