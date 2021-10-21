@@ -394,3 +394,9 @@ body.hide {
     text-align: center;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .cursor {
+    display: none;
+  }
+}
